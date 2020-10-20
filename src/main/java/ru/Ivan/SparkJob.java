@@ -28,7 +28,7 @@ public class SparkJob {
     }
 
     private static float checkIsCancelled(String current) {
-        
+
     }
 
     public static void main(String[] args) {
