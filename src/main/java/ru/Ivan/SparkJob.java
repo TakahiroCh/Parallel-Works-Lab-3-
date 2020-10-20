@@ -71,7 +71,8 @@ public class SparkJob {
 
         JavaPairRDD<Tuple2<Integer, Integer>, String> flightSerCountStrings = flightSerCounts
                 .mapToPair(value -> {
-                    return new Tuple2<>(value._1(), value._2().
+                    value._2();
+                    return new Tuple2<>(value._1(), FlightSerCount.toOutString(value._2()));
                 })
 
 
