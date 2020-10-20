@@ -12,5 +12,7 @@ public class SparkJob {
 
         JavaRDD<String> distOfAirportDelays = sc.textFile("664600583_T_ONTIME_sample.csv");
         JavaRDD<String> distOfAirportNames = sc.textFile("664600583_T_ONTIME_sample.csv");
+
+        
     }
 }
