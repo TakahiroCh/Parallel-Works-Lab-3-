@@ -4,7 +4,10 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.broadcast.Broadcast;
 import scala.Tuple2;
+
+import java.util.Map;
 
 public class SparkJob {
 
@@ -75,7 +78,9 @@ public class SparkJob {
                     return new Tuple2<>(value._1(), FlightSerCount.toOutString(value._2()));
                 });
 
-        final Broadcast<Map<Integer, String>> broadcast = sc.broadcast
+        final Broadcast<Map<Integer, String>> broadcast = sc.broadcast(dataOfAiportNames.collectAsMap());
+
+        
 
 
 
