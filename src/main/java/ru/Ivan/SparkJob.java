@@ -4,6 +4,7 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import scala.Tuple2;
 
 public class SparkJob {
 
@@ -22,9 +23,9 @@ public class SparkJob {
                         .filter(str -> str.contains("Code"))
                         .mapToPair(value -> {
                             String[] table = value.split(DELIMITER);
-                            int destAeroportID = Integer.parseInt(table[DESTAEROPORTID]
+                            int destAiroportID = Integer.parseInt(table[DESTAEROPORTID]
                                     .replaceAll("\"", ""));
-                            return 
+                            return new Tuple2<>(destAiroportID)
 
                         });
 
