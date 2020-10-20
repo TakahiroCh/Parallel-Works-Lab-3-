@@ -83,6 +83,10 @@ public class SparkJob {
         JavaRDD<String> out = flightSerCountStrings.map(value -> {
             Map<Integer, String> airportNames = broadcast.value();
 
+            String aiportNameOfStart = airportNames.get(value._1()._1());
+            String aiportNameOfFinish = airportNames.get(value._1()._2());
+
+            return aiportNameOfStart + " -> " + aiportNameOfFinish + "\n" + value._2();
         });
 
 
