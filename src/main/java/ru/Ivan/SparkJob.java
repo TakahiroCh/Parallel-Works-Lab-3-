@@ -47,7 +47,7 @@ public class SparkJob {
 
         JavaPairRDD<Tuple2<Integer, Integer>, FlightSerializable> dataOfAirportDelays =
                 distOfAirportDelays
-                        .filter(str -> str.contains("Year"))
+                        .filter(str -> str.contains("YEAR"))
                         .mapToPair(value -> {
                             String[] table = value.split(DELIMITERFORDELAYS);
                             int destAirportID = Integer.parseInt(table[DESTAIRPORTIDFORDELAYS]);
@@ -58,6 +58,7 @@ public class SparkJob {
                                     new FlightSerializable(destAirportID, originalAirportID, arrDelay, iscancelled));
                         });
 
+        
 
 
     }
