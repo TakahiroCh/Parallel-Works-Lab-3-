@@ -42,7 +42,7 @@ public class FlightSerCount implements Serializable {
     }
 
     public static FlightSerCount add(FlightSerCount a, FlightSerCount b) {
-        
+        return new FlightSerCount()
     }
 
 
