@@ -89,6 +89,8 @@ public class SparkJob {
             return aiportNameOfStart + " -> " + aiportNameOfFinish + "\n" + value._2();
         });
 
+        out.saveAsTextFile("hdfs://localhost:9000/);
+
 
 
 
