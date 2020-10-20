@@ -49,7 +49,8 @@ public class FlightSerCount implements Serializable {
     }
 
     public static String toOutString(FlightSerCount a) {
-        return "INFO : Counts { Flights : " + a.getCountOfFlights() +
+        return "INFO : { MaxDelay: " + a.getMaxArrDelay() +
+                
                 "; Delays : " + a.getCountOfDelays() +
                 "; Cancelled : " + a.getCountOfCancelled() +
                 " }, MaxDelay : " + a.getMaxArrDelay() + ".";
