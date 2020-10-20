@@ -27,7 +27,9 @@ public class FlightSerCount implements Serializable {
         return countOfCancelled;
     }
 
-    public static FlightSerCount addValue()
+    public static FlightSerCount addValue(FlightSerCount a, float maxArrDelay, boolean isDelayed, boolean isCancelled) {
+        
+    }
 
 
 }
