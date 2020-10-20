@@ -73,7 +73,9 @@ public class SparkJob {
                 .mapToPair(value -> {
                     value._2();
                     return new Tuple2<>(value._1(), FlightSerCount.toOutString(value._2()));
-                })
+                });
+
+        
 
 
 
