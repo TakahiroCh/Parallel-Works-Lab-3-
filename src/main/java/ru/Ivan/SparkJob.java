@@ -8,7 +8,8 @@ import scala.Tuple2;
 
 public class SparkJob {
 
-    private static final String DELIMITER = "\",";
+    private static final String DELIMITERFORNAMES = "\",";
+    private static final String DELIMITERFORDELAYS = ",";
     private static final int DESTAIRPORTID = 0;
     private static final int NAMEAIRPORT = 1;
 
@@ -23,15 +24,19 @@ public class SparkJob {
                 distOfAirportNames
                         .filter(str -> str.contains("Code"))
                         .mapToPair(value -> {
-                            String[] table = value.split(DELIMITER);
+                            String[] table = value.split(DELIMITERFORNAMES);
                             Integer destAirportID = Integer.valueOf(table[DESTAIRPORTID]
                                     .replaceAll("\"", ""));
                             return new Tuple2<>(destAirportID, table[NAMEAIRPORT]);
                         });
 
-        JavaPairRDD<Tulpe2<Integer, Integer>, FlightSerializable> dataOfAirportDelays =
+        JavaPairRDD<Tuple2<Integer, Integer>, FlightSerializable> dataOfAirportDelays =
                 distOfAirportDelays
                         .filter(str -> str.contains("Code"))
+                        .mapToPair(value -> {
+                            String[] table = value.split(DELIMITERFORDELAYS);
+                            
+                        })
 
 
 
