@@ -63,11 +63,18 @@ public class SparkJob {
                                 p.getArrDelay() > ZERO ? 1 : 0,
                                 p.getArrDelay(),
                                 p.getCancelled() == ZERO ? 0 : 1),
-                                (flightSerCount, p) -> flightSerCount.addValue(flightSerCount,
+                                (flightSerCount, p) -> FlightSerCount.addValue(flightSerCount,
                                         p.getArrDelay(),
                                         p.getArrDelay() != ZERO,
                                         p.getCancelled() != ZERO),
                                 FlightSerCount::add);
+
+        JavaPairRDD<Tuple2<Integer, Integer>, String> flightSerCountStrings = flightSerCounts
+                .mapToPair(value -> {
+                    return new Tuple2<>(value._1(), value._2().
+                })
+
+
 
 
 
