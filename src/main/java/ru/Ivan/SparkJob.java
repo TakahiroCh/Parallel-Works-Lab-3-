@@ -1,2 +1,4 @@
-package ru.Ivan;public class SparkJob {
+package ru.Ivan;
+
+public class SparkJob {
 }
