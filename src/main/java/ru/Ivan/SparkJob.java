@@ -57,7 +57,9 @@ public class SparkJob {
                             return new Tuple2<>(new Tuple2<>(originalAirportID, destAirportID),
                                     new FlightSerializable(destAirportID, originalAirportID, arrDelay, iscancelled));
                         });
+
         
+
 
 
 
