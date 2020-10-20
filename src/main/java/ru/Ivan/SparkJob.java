@@ -19,15 +19,19 @@ public class SparkJob {
         JavaRDD<String> distOfAirportDelays = sc.textFile("664600583_T_ONTIME_sample.csv");
         JavaRDD<String> distOfAirportNames = sc.textFile("L_AIRPORT_ID.csv");
 
-        JavaPairRDD<String, Integer> dataOfAiportNames =
+        JavaPairRDD<Integer, String> dataOfAiportNames =
                 distOfAirportNames
                         .filter(str -> str.contains("Code"))
                         .mapToPair(value -> {
                             String[] table = value.split(DELIMITER);
                             Integer destAirportID = Integer.valueOf(table[DESTAIRPORTID]
                                     .replaceAll("\"", ""));
-                            return new Tuple2<>(table[NAMEAIRPORT], destAirportID);
+                            return new Tuple2<>(destAirportID, table[NAMEAIRPORT]);
                         });
+
+        JavaPairRDD<Tulpe2<Integer, Integer>, FlightSerializable> dataOfAirportDelays =
+                distOfAirportDelays
+                        .filter(str -> str.contains("Code"))
 
 
 
