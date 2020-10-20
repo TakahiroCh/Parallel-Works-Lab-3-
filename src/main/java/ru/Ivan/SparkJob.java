@@ -62,7 +62,8 @@ public class SparkJob {
                         .combineByKey(p -> new FlightSerCount(1,
                                 p.getArrDelay() > ZERO ? 1 : 0,
                                 p.getArrDelay(),
-                                p.getCancelled() == ZERO ? 0 : 1);
+                                p.getCancelled() == ZERO ? 0 : 1),
+                                );
 
 
 
