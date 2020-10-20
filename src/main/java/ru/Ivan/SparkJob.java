@@ -58,7 +58,9 @@ public class SparkJob {
                                     new FlightSerializable(destAirportID, originalAirportID, arrDelay, iscancelled));
                         });
 
-        
+        JavaPairRDD<Tuple2<Integer, Integer>, FlightSerCount> flightSerCounts =
+                dataOfAirportDelays
+                        .combineByKey()
 
 
 
