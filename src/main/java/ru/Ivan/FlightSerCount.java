@@ -42,7 +42,10 @@ public class FlightSerCount implements Serializable {
     }
 
     public static FlightSerCount add(FlightSerCount a, FlightSerCount b) {
-        return new FlightSerCount()
+        return new FlightSerCount(a.getCountOfFlights() + b.getCountOfFlights(),
+                a.getCountOfDelays() + b.getCountOfDelays(),
+                Math.max(a.getMaxArrDelay(), b.getMaxArrDelay()),
+                a.getCountOfCancelled() + b.getCountOfCancelled());
     }
 
 
