@@ -1,6 +1,7 @@
 package ru.Ivan;
 
 import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
@@ -13,7 +14,9 @@ public class SparkJob {
         JavaRDD<String> distOfAirportDelays = sc.textFile("664600583_T_ONTIME_sample.csv");
         JavaRDD<String> distOfAirportNames = sc.textFile("664600583_T_ONTIME_sample.csv");
 
-        
+        JavaPairRDD<String, Long> 
+
+
 
 
     }
