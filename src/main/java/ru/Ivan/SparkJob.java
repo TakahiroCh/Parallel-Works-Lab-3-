@@ -23,9 +23,9 @@ public class SparkJob {
                         .filter(str -> str.contains("Code"))
                         .mapToPair(value -> {
                             String[] table = value.split(DELIMITER);
-                            int destAiroportID = Integer.parseInt(table[DESTAEROPORTID]
+                            int destAirportID = Integer.parseInt(table[DESTAEROPORTID]
                                     .replaceAll("\"", ""));
-                            return new Tuple2<>(destAiroportID)
+                            return new Tuple2<>(destAirportID)
 
                         });
 
