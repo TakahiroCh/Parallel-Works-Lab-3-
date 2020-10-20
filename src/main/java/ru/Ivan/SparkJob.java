@@ -4,7 +4,6 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.ietf.jgss.Oid;
 import scala.Tuple2;
 
 public class SparkJob {
@@ -60,9 +59,10 @@ public class SparkJob {
 
         JavaPairRDD<Tuple2<Integer, Integer>, FlightSerCount> flightSerCounts =
                 dataOfAirportDelays
-                        .combineByKey(p -> new FlightSerCount(1, 
-                                p.getCancelled() == ZERO ? 0 : 1,
-                                )
+                        .combineByKey(p -> new FlightSerCount(1,
+                                p.getArrDelay() > ZERO ? 1 : 0,
+                                p.getArrDelay(),
+                                p.getCancelled() == ZERO ? 0 : 1);
 
 
 
