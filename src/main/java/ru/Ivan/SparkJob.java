@@ -8,6 +8,7 @@ import org.apache.spark.api.java.JavaSparkContext;
 public class SparkJob {
 
     private static final String DELIMITER = "\",";
+    private static final int DESTAEROPORTID = 0;
 
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab3");
@@ -21,6 +22,9 @@ public class SparkJob {
                         .filter(str -> str.contains("Code"))
                         .mapToPair(value -> {
                             String[] table = value.split(DELIMITER);
+                            int destAeroportID = Integer.parseInt(table[DESTAEROPORTID]
+                                    .replaceAll("\"", ""));
+                            return 
 
                         });
 
