@@ -1,2 +1,4 @@
-package ru.Ivan;public class FlightSerCount {
+package ru.Ivan;
+
+public class FlightSerCount {
 }
