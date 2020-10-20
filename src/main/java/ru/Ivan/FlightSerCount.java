@@ -49,7 +49,8 @@ public class FlightSerCount implements Serializable {
     }
 
     public static String toOutString(FlightSerCount a) {
-        float percentOfDelays = a.getCountOfDelays() / a.getCountOfFlights() * 100;
+        float percentOfDelays = (float) a.getCountOfDelays() / a.getCountOfFlights() * 100;
+        float percentOfCancelled = (float) a.getCountOfCancelled() / a.getCountOfFlights() * 100;
         return "INFO : { MaxDelay: " + a.getMaxArrDelay() +
                 "; Flights : "  + a.getCountOfFlights() +
                 "; Delays : " + a.getCountOfDelays() +
