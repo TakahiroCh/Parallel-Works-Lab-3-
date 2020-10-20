@@ -17,7 +17,7 @@ public class SparkJob {
         JavaSparkContext sc = new JavaSparkContext(conf);
 
         JavaRDD<String> distOfAirportDelays = sc.textFile("664600583_T_ONTIME_sample.csv");
-        JavaRDD<String> distOfAirportNames = sc.textFile("664600583_T_ONTIME_sample.csv");
+        JavaRDD<String> distOfAirportNames = sc.textFile("L_AIRPORT_ID.csv");
 
         JavaPairRDD<String, Integer> dataOfAiportNames =
                 distOfAirportNames
