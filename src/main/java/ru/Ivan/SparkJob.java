@@ -63,7 +63,11 @@ public class SparkJob {
                                 p.getArrDelay() > ZERO ? 1 : 0,
                                 p.getArrDelay(),
                                 p.getCancelled() == ZERO ? 0 : 1),
-                                );
+                                (flightSerCount, flightSerializable) -> flightSerCount.addValue(
+                                        flightSerCount.getCountOfFlights() + 1,
+                                        flightSerCount.
+
+                                ));
 
 
 
