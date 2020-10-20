@@ -10,6 +10,7 @@ public class SparkJob {
         SparkConf conf = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
-        JavaRDD<String> distOfDelays = sc.textFile()
+        JavaRDD<String> distOfAirportDelays = sc.textFile("664600583_T_ONTIME_sample.csv");
+        JavaRDD<String> distOfAirportNames = sc.textFile("664600583_T_ONTIME_sample.csv");
     }
 }
