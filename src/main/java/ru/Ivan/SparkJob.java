@@ -39,7 +39,7 @@ public class SparkJob {
 
         JavaPairRDD<Integer, String> dataOfAiportNames =
                 distOfAirportNames
-                        .filter(str -> str.contains("Code"))
+                        .filter(str -> !str.contains("Code"))
                         .mapToPair(value -> {
                             String[] table = value.split(DELIMITERFORNAMES);
                             Integer destAirportID = Integer.valueOf(table[DESTAIRPORTIDFORNAMES]
@@ -49,7 +49,7 @@ public class SparkJob {
 
         JavaPairRDD<Tuple2<Integer, Integer>, FlightSerializable> dataOfAirportDelays =
                 distOfAirportDelays
-                        .filter(str -> str.contains("YEAR"))
+                        .filter(str -> !str.contains("YEAR"))
                         .mapToPair(value -> {
                             String[] table = value.split(DELIMITERFORDELAYS);
                             int destAirportID = Integer.parseInt(table[DESTAIRPORTIDFORDELAYS]);
