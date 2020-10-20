@@ -41,7 +41,7 @@ public class FlightSerCount implements Serializable {
                 isCancelled ? a.getCountOfCancelled() + 1 : a.getCountOfCancelled());
     }
 
-    public static add()
+    public static FlightSerCount add(FlightSerCount a, FlightSerCount b)
 
 
 }
