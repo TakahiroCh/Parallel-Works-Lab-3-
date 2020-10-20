@@ -10,11 +10,22 @@ public class SparkJob {
 
     private static final String DELIMITERFORNAMES = "\",";
     private static final String DELIMITERFORDELAYS = ",";
-    private static final int DESTAIRPORTID = 0;
+    private static final int DESTAIRPORTIDFORNAMES= 0;
     private static final int NAMEAIRPORT = 1;
     private static final int ORIGINAIRPORTID = 11;
-    private static final int DESTAIRPORTID = 14;
+    private static final int DESTAIRPORTIDFORDELAYS = 14;
     private static final int ARRDELAY = 17;
+    private static final int CANCELLED = 19;
+    private static final String NULLSTR = "";
+    private static final float ZERO = 0.0F;
+
+    private static float checkNull(String current) {
+        if (current.equals(NULLSTR)) {
+            return ZERO;
+        } else {
+            return Float.parseFloat(current);
+        }
+    }
 
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab3");
@@ -28,7 +39,7 @@ public class SparkJob {
                         .filter(str -> str.contains("Code"))
                         .mapToPair(value -> {
                             String[] table = value.split(DELIMITERFORNAMES);
-                            Integer destAirportID = Integer.valueOf(table[DESTAIRPORTID]
+                            Integer destAirportID = Integer.valueOf(table[DESTAIRPORTIDFORNAMES]
                                     .replaceAll("\"", ""));
                             return new Tuple2<>(destAirportID, table[NAMEAIRPORT]);
                         });
@@ -38,6 +49,10 @@ public class SparkJob {
                         .filter(str -> str.contains("Code"))
                         .mapToPair(value -> {
                             String[] table = value.split(DELIMITERFORDELAYS);
+                            int destAeroportID = Integer.parseInt(table[DESTAIRPORTIDFORDELAYS]);
+                            float arrDelay = checkNull(table[ARRDELAY]);
+                            boolean iscancelled = checkIsCancelled(table[CANCELLED]);
+
 
                         })
 
