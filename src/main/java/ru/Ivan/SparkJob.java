@@ -4,6 +4,7 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.ietf.jgss.Oid;
 import scala.Tuple2;
 
 public class SparkJob {
@@ -49,7 +50,8 @@ public class SparkJob {
                         .filter(str -> str.contains("Code"))
                         .mapToPair(value -> {
                             String[] table = value.split(DELIMITERFORDELAYS);
-                            int destAeroportID = Integer.parseInt(table[DESTAIRPORTIDFORDELAYS]);
+                            int destAirportID = Integer.parseInt(table[DESTAIRPORTIDFORDELAYS]);
+                            int originalAirportID = Integer.parseInt(table[ORIGINAIRPORTID]);
                             float arrDelay = checkNull(table[ARRDELAY]);
                             float iscancelled = Float.parseFloat(table[CANCELLED]);
                             
