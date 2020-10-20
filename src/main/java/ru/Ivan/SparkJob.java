@@ -12,6 +12,7 @@ public class SparkJob {
     private static final String DELIMITERFORDELAYS = ",";
     private static final int DESTAIRPORTID = 0;
     private static final int NAMEAIRPORT = 1;
+    private static final int ORIGINAIRPORTID = 11;
 
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab3");
@@ -35,7 +36,7 @@ public class SparkJob {
                         .filter(str -> str.contains("Code"))
                         .mapToPair(value -> {
                             String[] table = value.split(DELIMITERFORDELAYS);
-                            
+
                         })
 
 
