@@ -55,7 +55,9 @@ public class FlightSerCount implements Serializable {
                 "; Flights : "  + a.getCountOfFlights() +
                 "; Delays : " + a.getCountOfDelays() +
                 "; Cancelled : " + a.getCountOfCancelled() +
-                "}, % of Delays : " + ;
+                "}, % of Delays : " + percentOfDelays +
+                "%, % of Cancelled : " + percentOfCancelled +
+                "%.";
     }
 
 
