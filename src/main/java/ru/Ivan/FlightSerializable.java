@@ -1,2 +1,4 @@
-package ru.Ivan;public class FlightSerializable {
+package ru.Ivan;
+
+public class FlightSerializable {
 }
