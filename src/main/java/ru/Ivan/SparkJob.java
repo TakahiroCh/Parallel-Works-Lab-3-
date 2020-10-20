@@ -80,7 +80,9 @@ public class SparkJob {
 
         final Broadcast<Map<Integer, String>> broadcast = sc.broadcast(dataOfAiportNames.collectAsMap());
 
-        
+        JavaRDD<String> out = flightSerCountStrings.map(value -> {
+            
+        });
 
 
 
