@@ -14,6 +14,7 @@ public class SparkJob {
     private static final int NAMEAIRPORT = 1;
     private static final int ORIGINAIRPORTID = 11;
     private static final int DESTAIRPORTID = 14;
+    private static final int ARRDELAY = 17;
 
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab3");
