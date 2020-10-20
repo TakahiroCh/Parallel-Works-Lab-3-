@@ -17,7 +17,7 @@ public class SparkJob {
         JavaPairRDD<String, Long> dataOfAiportNames =
                 distOfAirportNames
                         .filter(str -> str.contains("Code")
-                        .
+                        .mapToPair()
 
 
 
