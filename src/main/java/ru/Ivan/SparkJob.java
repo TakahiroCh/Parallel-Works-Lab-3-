@@ -54,10 +54,10 @@ public class SparkJob {
                             int originalAirportID = Integer.parseInt(table[ORIGINAIRPORTID]);
                             float arrDelay = checkNull(table[ARRDELAY]);
                             float iscancelled = Float.parseFloat(table[CANCELLED]);
-                            
-
-
-                        })
+                            return new Tuple2<>(new Tuple2<>(originalAirportID, destAirportID),
+                                    new FlightSerializable(destAirportID, originalAirportID, arrDelay, iscancelled));
+                        });
+        
 
 
 
