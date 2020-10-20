@@ -9,7 +9,8 @@ import scala.Tuple2;
 public class SparkJob {
 
     private static final String DELIMITER = "\",";
-    private static final int DESTAEROPORTID = 0;
+    private static final int DESTAIRPORTID = 0;
+    private static final int NAMEAIRPORT = 1;
 
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab3");
@@ -23,10 +24,9 @@ public class SparkJob {
                         .filter(str -> str.contains("Code"))
                         .mapToPair(value -> {
                             String[] table = value.split(DELIMITER);
-                            int destAirportID = Integer.parseInt(table[DESTAEROPORTID]
+                            Long destAirportID = Integer.valueOf(table[DESTAIRPORTID]
                                     .replaceAll("\"", ""));
-                            return new Tuple2<>(destAirportID)
-
+                            return new Tuple2<>(table[NAMEAIRPORT], destAirportID);
                         });
 
 
