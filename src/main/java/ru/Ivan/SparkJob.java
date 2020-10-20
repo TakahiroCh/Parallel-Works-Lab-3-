@@ -58,7 +58,7 @@ public class SparkJob {
                                     new FlightSerializable(destAirportID, originalAirportID, arrDelay, iscancelled));
                         });
 
-        
+
 
 
 
