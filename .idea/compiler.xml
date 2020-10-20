@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Parallel-Works-Lab-3-" target="1.5" />
+      <module name="Parallel-Works-Lab-3-" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
