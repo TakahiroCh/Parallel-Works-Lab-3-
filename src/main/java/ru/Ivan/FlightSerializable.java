@@ -1,4 +1,7 @@
 package ru.Ivan;
 
-public class FlightSerializable {
+import java.io.Serializable;
+
+public class FlightSerializable implements Serializable {
+
 }
