@@ -27,10 +27,6 @@ public class SparkJob {
         }
     }
 
-    private static float checkIsCancelled(String current) {
-
-    }
-
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
@@ -55,7 +51,8 @@ public class SparkJob {
                             String[] table = value.split(DELIMITERFORDELAYS);
                             int destAeroportID = Integer.parseInt(table[DESTAIRPORTIDFORDELAYS]);
                             float arrDelay = checkNull(table[ARRDELAY]);
-                            boolean iscancelled = checkIsCancelled(table[CANCELLED]);
+                            float iscancelled = Float.parseFloat(table[CANCELLED]);
+                            
 
 
                         })
