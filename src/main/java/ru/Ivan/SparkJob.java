@@ -29,7 +29,7 @@ public class SparkJob {
                             return new Tuple2<>(table[NAMEAIRPORT], destAirportID);
                         });
 
-        
+
 
     }
 }
