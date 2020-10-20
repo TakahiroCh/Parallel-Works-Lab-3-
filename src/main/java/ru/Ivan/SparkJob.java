@@ -7,6 +7,8 @@ import org.apache.spark.api.java.JavaSparkContext;
 
 public class SparkJob {
 
+    private static final String DELIMITER = "\",";
+
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
@@ -17,7 +19,10 @@ public class SparkJob {
         JavaPairRDD<String, Long> dataOfAiportNames =
                 distOfAirportNames
                         .filter(str -> str.contains("Code"))
-                        .mapToPair();
+                        .mapToPair(value -> {
+                            String[] table = value.split(DELIMITER);
+
+                        });
 
 
 
